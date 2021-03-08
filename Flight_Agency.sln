@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flight_Agency", "Flight_Agency.csproj", "{77041BE7-CC07-4AE5-B332-C68BCF1435BE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{77041BE7-CC07-4AE5-B332-C68BCF1435BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77041BE7-CC07-4AE5-B332-C68BCF1435BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77041BE7-CC07-4AE5-B332-C68BCF1435BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77041BE7-CC07-4AE5-B332-C68BCF1435BE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
