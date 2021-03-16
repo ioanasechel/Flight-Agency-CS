@@ -1,18 +1,14 @@
-﻿﻿using System.Collections.Generic;
-using FlightAgency.model;
+﻿using System.Collections.Generic;
+using Flight_Agency.model;
 
-namespace FlightAgency.repository
+namespace Flight_Agency.repository
 
 {
     interface IRepository<ID, E> where E : Entity<ID>
     {
-        E FindOne(ID id);
-        
         IEnumerable<E> FindAll();
         
         E Save(E entity);
-        
-        E Delete(ID id);
         
         E Update(E entity);
     }

@@ -1,6 +1,6 @@
-﻿﻿using System;
+﻿using System;
 
-namespace FlightAgency.model.validator
+namespace Flight_Agency.model.validator
 
 {
     class ValidationException : ApplicationException

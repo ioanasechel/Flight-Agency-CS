@@ -1,13 +1,21 @@
-﻿﻿using System;
+﻿using System;
 
-namespace FlightAgency.model
+namespace Flight_Agency.model
 
 {
-    class Flight : Entity<int>
+    public class Flight : Entity<int>
     {
+        public Flight(string destination, DateTime departureDate, string airport, int availableSeats)
+        {
+            Destination = destination;
+            DepartureDate = departureDate;
+            Airport = airport;
+            AvailableSeats = availableSeats;
+        }
+
         public String Destination { get; set; }
         
-        public DateTime DepartureTime { get; set; }
+        public DateTime DepartureDate { get; set; }
         
         public String Airport { get; set; }
         

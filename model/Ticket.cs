@@ -1,9 +1,18 @@
-﻿﻿using System;
+﻿using System;
 
-namespace FlightAgency.model
+namespace Flight_Agency.model
 {
-    class Ticket : Entity<int>
+    public class Ticket : Entity<int>
     {
+        public Ticket(int flightId, string clientName, string tourists, string clientAddress, int seats)
+        {
+            FlightId = flightId;
+            ClientName = clientName;
+            Tourists = tourists;
+            ClientAddress = clientAddress;
+            Seats = seats;
+        }
+
         public int FlightId { get; set; }
         
         public String ClientName{ get; set; }

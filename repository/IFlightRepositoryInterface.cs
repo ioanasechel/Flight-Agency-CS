@@ -1,6 +1,6 @@
-﻿﻿using FlightAgency.model;
+﻿using Flight_Agency.model;
 
-namespace FlightAgency.repository
+namespace Flight_Agency.repository
 {
     interface IFlightRepositoryInterface : IRepository<int, Flight>
     {

@@ -1,12 +1,9 @@
-﻿﻿using FlightAgency.model;
+﻿using Flight_Agency.model;
 
-namespace FlightAgency.repository
+namespace Flight_Agency.repository
 {
     interface IEmployeeRepositoryInterface : IRepository<string, Employee>
     {
-        
-        Employee FindEmployeeByName(string name);
-        
         
     }
 }

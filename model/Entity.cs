@@ -1,6 +1,6 @@
-﻿﻿namespace FlightAgency.model
+﻿namespace Flight_Agency.model
 {
-    class Entity<TID>
+    public class Entity<TID>
     {
         public TID ID { get; set; }
     }

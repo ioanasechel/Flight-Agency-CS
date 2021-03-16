@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flight_Agency", "Flight_Agency.csproj", "{77041BE7-CC07-4AE5-B332-C68BCF1435BE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectionUtils", "ConnectionUtils\ConnectionUtils.csproj", "{682D83DC-5D47-462F-B13A-9AE547A29FEE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{77041BE7-CC07-4AE5-B332-C68BCF1435BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77041BE7-CC07-4AE5-B332-C68BCF1435BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77041BE7-CC07-4AE5-B332-C68BCF1435BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{682D83DC-5D47-462F-B13A-9AE547A29FEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{682D83DC-5D47-462F-B13A-9AE547A29FEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{682D83DC-5D47-462F-B13A-9AE547A29FEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{682D83DC-5D47-462F-B13A-9AE547A29FEE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -1,4 +1,4 @@
-﻿﻿namespace FlightAgency.model
+﻿namespace Flight_Agency.model
 {
     class Tuple<E1,E2>
     {
