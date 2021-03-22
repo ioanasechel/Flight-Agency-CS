@@ -90,11 +90,17 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Form1.cs">
+        <Compile Include="LogInPage.cs">
             <SubType>Form</SubType>
         </Compile>
-        <Compile Include="Form1.Designer.cs">
-            <DependentUpon>Form1.cs</DependentUpon>
+        <Compile Include="LogInPage.Designer.cs">
+            <DependentUpon>LogInPage.cs</DependentUpon>
+        </Compile>
+        <Compile Include="MainPage.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="MainPage.Designer.cs">
+          <DependentUpon>MainPage.cs</DependentUpon>
         </Compile>
         <Compile Include="model\Employee.cs" />
         <Compile Include="model\Entity.cs" />
@@ -113,6 +119,15 @@
         <Compile Include="repository\IRepository.cs" />
         <Compile Include="repository\ITicketRepositoryInterface.cs" />
         <Compile Include="repository\TicketDBRepository.cs" />
+        <Compile Include="service\service.cs" />
+        <Compile Include="utils\observer\IObservable.cs" />
+        <Compile Include="utils\observer\IObserver.cs" />
+        <EmbeddedResource Include="LogInPage.resx">
+          <DependentUpon>LogInPage.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="MainPage.resx">
+          <DependentUpon>MainPage.cs</DependentUpon>
+        </EmbeddedResource>
         <EmbeddedResource Include="Properties\Resources.resx">
             <Generator>ResXFileCodeGenerator</Generator>
             <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -142,6 +157,10 @@
         <Project>{3755514d-d1d3-4d6e-9458-6c54120752c3}</Project>
         <Name>ConnectionUtils</Name>
       </ProjectReference>
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include="plane.png" />
+      <Content Include="Resources\nightsky.jpg" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <Import Project="packages\SQLitePCLRaw.lib.e_sqlite3.2.0.5-pre20210119130047\build\net461\SQLitePCLRaw.lib.e_sqlite3.targets" Condition="Exists('packages\SQLitePCLRaw.lib.e_sqlite3.2.0.5-pre20210119130047\build\net461\SQLitePCLRaw.lib.e_sqlite3.targets')" />

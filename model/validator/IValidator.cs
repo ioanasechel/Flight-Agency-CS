@@ -1,4 +1,4 @@
-﻿﻿namespace Flight_Agency.model.validator
+﻿namespace Flight_Agency.model.validator
 {
     interface IValidator<E>
     {

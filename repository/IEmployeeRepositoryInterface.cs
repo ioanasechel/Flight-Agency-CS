@@ -2,8 +2,8 @@
 
 namespace Flight_Agency.repository
 {
-    interface IEmployeeRepositoryInterface : IRepository<string, Employee>
+    public interface IEmployeeRepositoryInterface : IRepository<string, Employee>
     {
-        
+        Employee findOne(string username);
     }
 }

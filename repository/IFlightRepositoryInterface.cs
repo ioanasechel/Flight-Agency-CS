@@ -2,9 +2,10 @@
 
 namespace Flight_Agency.repository
 {
-    interface IFlightRepositoryInterface : IRepository<int, Flight>
+    public interface IFlightRepositoryInterface : IRepository<int, Flight>
     {
         //TODO :  implement methods
-        
+
+        Flight findOne(int ticketFlightId);
     }
 }

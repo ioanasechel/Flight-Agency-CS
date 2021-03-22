@@ -74,5 +74,32 @@ namespace Flight_Agency.repository
         {
             throw new System.NotImplementedException();
         }
+
+        public Employee findOne(string stringUser)
+        {
+            IDbConnection con = DBUtils.getConnection();
+            using (var comm = con.CreateCommand())
+            {
+                comm.CommandText = "select * from Employees where username=@username";
+                var paramUser = comm.CreateParameter();
+                paramUser.ParameterName = "@username";
+                paramUser.Value = stringUser;
+                comm.Parameters.Add(paramUser);
+                
+                using (var dataR=comm.ExecuteReader())
+                {
+                    while (dataR.Read())
+                    {
+                        string username = dataR.GetString(0);
+                        string password = dataR.GetString(1);
+                        string name = dataR.GetString(2);
+                        Employee employee = new Employee(password, name);
+                        employee.ID = username;
+                        return employee;
+                    }
+                }
+            }
+            return null;
+        }
     }
 }

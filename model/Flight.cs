@@ -21,5 +21,9 @@ namespace Flight_Agency.model
         
         public int AvailableSeats { get; set; }
 
+        public override string ToString()
+        {
+            return "ID="+ID+" Destination="+Destination+" Departure_date="+DepartureDate+" Airport="+Airport+" AvailableSeats="+AvailableSeats;
+        }
     }
 }

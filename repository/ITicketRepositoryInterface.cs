@@ -2,7 +2,7 @@
 
 namespace Flight_Agency.repository
 {
-    interface ITicketRepositoryInterface : IRepository<int, Ticket>
+    public interface ITicketRepositoryInterface : IRepository<int, Ticket>
     {
         //TODO: implement methods
     }

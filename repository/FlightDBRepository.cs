@@ -83,7 +83,57 @@ namespace Flight_Agency.repository
 
         public Flight Update(Flight entity)
         {
-            throw new System.NotImplementedException();
+            var con = DBUtils.getConnection();
+            using (var comm = con.CreateCommand())
+            {
+                comm.CommandText =
+                    "update Flights set available_seats=@seats where flightID=@flightID";
+                
+                var paramSeats = comm.CreateParameter();
+                paramSeats.ParameterName = "@seats";
+                paramSeats.Value = entity.AvailableSeats;
+                comm.Parameters.Add(paramSeats);
+                
+                var paramId = comm.CreateParameter();
+                paramId.ParameterName = "@flightID";
+                paramId.Value = entity.ID;
+                comm.Parameters.Add(paramId);
+                
+                var result = comm.ExecuteNonQuery();
+                if (result == 0)
+                    System.Console.Write("No flights updated!");
+            }
+
+            return entity;
+        }
+
+        public Flight findOne(int ticketFlightId)
+        {
+            IDbConnection con = DBUtils.getConnection();
+            using (var comm = con.CreateCommand())
+            {
+                comm.CommandText = "select * from Flights where flightID=@flightID";
+                var dataParameter = comm.CreateParameter();
+                dataParameter.ParameterName = "@flightID";
+                dataParameter.Value = ticketFlightId;
+                comm.Parameters.Add(dataParameter);
+                
+                using (var dataR=comm.ExecuteReader())
+                {
+                    while (dataR.Read())
+                    {
+                        int flightID = dataR.GetInt32(0);
+                        string destination = dataR.GetString(1);
+                        DateTime departure_date = dataR.GetDateTime(2);
+                        string airport = dataR.GetString(3);
+                        int available_seats = dataR.GetInt32(4);
+                        Flight flight = new Flight(destination, departure_date, airport, available_seats);
+                        flight.ID = flightID;
+                        return flight;
+                    }
+                }
+            }
+            return null;
         }
     }
 }
