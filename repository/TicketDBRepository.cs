@@ -45,13 +45,8 @@ namespace Flight_Agency.repository
             var con = DBUtils.getConnection();
             using (var comm = con.CreateCommand())
             {
-                comm.CommandText = "insert into Tickets values (@ticketID, @flightID, @client_name, @tourists, @client_address, @seats)";
+                comm.CommandText = "insert into Tickets(flightID, client_name, tourists, client_address, seats) values (@flightID, @client_name, @tourists, @client_address, @seats)";
 
-                var paramId = comm.CreateParameter();
-                paramId.ParameterName = "@ticketID";
-                paramId.Value = entity.ID;
-                comm.Parameters.Add(paramId);
-                
                 var paramFID = comm.CreateParameter();
                 paramFID.ParameterName = "@flightID";
                 paramFID.Value = entity.FlightId;

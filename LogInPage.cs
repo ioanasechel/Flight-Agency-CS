@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Flight_Agency.model;
 using Flight_Agency.service;
 
 namespace Flight_Agency
@@ -23,11 +24,16 @@ namespace Flight_Agency
 
         private void buttonLogIn_Click(object sender, EventArgs e)
         {
-            if (txtUsername.Text!=string.Empty && 
-                txtPassword.Text != string.Empty &&
-                service.getOneEmployee(txtUsername.Text)!=null)
+            String user = txtUsername.Text;
+            String pass = txtPassword.Text;
+            Employee employee = service.getOneEmployee(user);
+            if (user!=string.Empty && 
+                pass != string.Empty &&
+                employee!=null &&
+                employee.Password==pass)
             {
                 MainPage mainpage = new MainPage(service);
+                //this.Hide();
                 mainpage.Show();
             }
             else

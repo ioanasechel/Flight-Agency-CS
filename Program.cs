@@ -43,8 +43,8 @@ namespace Flight_Agency
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new LogInPage(service));
-            Application.Run(new MainPage(service));
+            Application.Run(new LogInPage(service));
+            //Application.Run(new MainPage(service));
         }
     }
 }

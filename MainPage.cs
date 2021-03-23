@@ -36,9 +36,14 @@ namespace Flight_Agency
             String tourists = txtTourists.Text;
             int seats = int.Parse(txtSeats.Text);
             Ticket ticket = new Ticket(fID, clientName, tourists, clientAddress, seats);
-            //testLabel.Text = flight.ToString();
+            testLabel.Text = flight.ToString();
             service.addTicket(ticket);
             clearFields();
+        }
+
+        private void buttonLogOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -17,6 +17,7 @@ namespace Flight_Agency.repository
         
         public IEnumerable<Flight> FindAll()
         {
+            log.Info("Entering findAll...");
             IDbConnection con = DBUtils.getConnection();
             IList<Flight> flights = new List<Flight>();
             using (var comm = con.CreateCommand())
@@ -37,16 +38,18 @@ namespace Flight_Agency.repository
                     }
                 }
             }
+            log.Info("Exiting findAll...");
             return flights;
         }
 
         public Flight Save(Flight entity)
         {
+            log.Info("Entering save function...");
             var con = DBUtils.getConnection();
             using (var comm = con.CreateCommand())
             {
                 comm.CommandText =
-                    "insert into Flights values (@flightID, @destination, @departure_date, @airport, @available_seats)";
+                    "insert into Flights(flightID, destination, departure_date, airport, available_seats) values (@flightID, @destination, @departure_date, @airport, @available_seats)";
                 
                 var paramId = comm.CreateParameter();
                 paramId.ParameterName = "@flightID";
@@ -75,14 +78,15 @@ namespace Flight_Agency.repository
                 
                 var result = comm.ExecuteNonQuery();
                 if (result == 0)
-                    System.Console.Write("No flights added!");
+                    log.Info("No flights added!");
             }
-
+            log.Info("Exiting save function...");
             return entity;
         }
 
         public Flight Update(Flight entity)
         {
+            log.Info("Entering update function...");
             var con = DBUtils.getConnection();
             using (var comm = con.CreateCommand())
             {
@@ -101,14 +105,15 @@ namespace Flight_Agency.repository
                 
                 var result = comm.ExecuteNonQuery();
                 if (result == 0)
-                    System.Console.Write("No flights updated!");
+                    log.Info("No flights updated!");
             }
-
+            log.Info("Exiting update function...");
             return entity;
         }
 
         public Flight findOne(int ticketFlightId)
         {
+            log.Info("Entering find one function...");
             IDbConnection con = DBUtils.getConnection();
             using (var comm = con.CreateCommand())
             {
@@ -129,10 +134,12 @@ namespace Flight_Agency.repository
                         int available_seats = dataR.GetInt32(4);
                         Flight flight = new Flight(destination, departure_date, airport, available_seats);
                         flight.ID = flightID;
+                        log.Info("Exiting findOne function with 1 entities...");
                         return flight;
                     }
                 }
             }
+            log.Info("Exiting findOne function with 0 entities...");
             return null;
         }
     }

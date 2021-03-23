@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Data;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
+using System.Windows.Forms;
+using Microsoft.Data.Sqlite;
 
 namespace Flight_Agency.repository
 {
@@ -20,7 +24,19 @@ namespace Flight_Agency.repository
 
         private static IDbConnection getNewConnection()
         {	
-            return ConnectionUtils.ConnectionFactory.getInstance().createConnection();
+            //return ConnectionUtils.ConnectionFactory.getInstance().createConnection();
+            String url = ConfigurationManager.ConnectionStrings["flightagency"].ConnectionString;
+            SqliteConnection con = null;
+            try
+            {
+                con = new SqliteConnection(url);
+            }
+            catch(SqlException e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+
+            return con;
         }
     }
 }

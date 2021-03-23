@@ -134,7 +134,7 @@ namespace Flight_Agency
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
             this.Name = "LogInPage";
-            this.Text = "Avioane americane";
+            this.Text = "Flight Agency";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
